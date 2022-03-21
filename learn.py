@@ -26,3 +26,29 @@ days = ['SUN','MON','TUE',
 print(days[2])
 
 input("按下ENTER退出，其他键显示。。。\n")
+
+#创建类
+'''
+class classname:
+    class_suite 
+'''
+class employee:
+    empCount = 0
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        employee.empCount += 1
+
+    def displayCount(self):
+        print("Total Employee %d" % employee.empCount)
+
+    def displayEmployee(self):
+        print("Name : ", self.name, ",salary: ", self.salary)
+"创建 Employee第一个对象,访问属性"
+emp1 = employee("Woody", 10)
+emp2 = employee("BUZZ", 20)
+emp1.displayEmployee()
+emp2.displayEmployee()
+print("Total Employee %d" % employee.empCount)
+
