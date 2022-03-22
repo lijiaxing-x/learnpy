@@ -25,7 +25,7 @@ days = ['SUN','MON','TUE',
 'WED','THUR']
 print(days[2])
 
-input("按下ENTER退出，其他键显示。。。\n")
+#input("按下ENTER退出，其他键显示。。。\n")
 
 #创建类
 '''
@@ -44,7 +44,7 @@ class employee:
         print("Total Employee %d" % employee.empCount)
 
     def displayEmployee(self):
-        print("Name : ", self.name, ",salary: ", self.salary)
+        print("Name : ", self.name, ", salary: ", self.salary)
 "创建 Employee第一个对象,访问属性"
 emp1 = employee("Woody", 10)
 emp2 = employee("BUZZ", 20)
@@ -52,3 +52,15 @@ emp1.displayEmployee()
 emp2.displayEmployee()
 print("Total Employee %d" % employee.empCount)
 
+emp1.age = 7
+emp1.age = 8
+#del emp1.age
+print(hasattr(emp1, 'age'))#has attribute
+print(getattr(emp1,'age'))
+setattr(emp1,'age', 10)
+print(emp1.age)
+print("Employee._doc_:",employee.__doc__)
+print("employee._name_:",employee.__name__)
+print("employee._module_:",employee.__module__)
+print("employee._bases_:",employee.__bases__)
+print("employee._dict_:",employee.__dict__)
