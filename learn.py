@@ -1,3 +1,5 @@
+from ast import Str
+from doctest import ELLIPSIS_MARKER
 import sys
 '''
 3.18 1st dae
@@ -72,16 +74,16 @@ print("employee._dict_:",employee.__dict__)
 3.23 数字类型四种：int bool float complex
 '''
 #字符串
-str = '1234567890'
+str1 = '1234567890'
 #输出从第一位到倒数第二位
-print(str[0:-1])
+print(str1[0:-1])
 #输出第3-5个字符
-print(str[2:5])
-print(str[0:])
-print(str[0:5])#区间就是左闭右开
-print(str[1:5:2])#2为步长，左闭右开
-print(str * 2)#输出两次
-print(str + '\n你好')
+print(str1[2:5])
+print(str1[0:])
+print(str1[0:5])#区间就是左闭右开
+print(str1[1:5:2])#2为步长，左闭右开
+print(str1 * 2)#输出两次
+print(str1 + '\n你好')
 print(r'hola\nchao')#r表示原始字符串
 print('------------\n------')
 
@@ -142,7 +144,7 @@ f = 17 % 3 #取余
 g = 2 ** 5 #2的5次幂
 #list
 list = [ 'abcd', 786, 2.23, '85tracer', 70]
-str = '2abcd'
+str1 = '2abcd'
 tinylist = [123, '85tracer']
 print(str)
 #print(list)
@@ -168,5 +170,81 @@ if __name__ == "__main__":
     input = '屎 吃 可以 小狗'
     rw = reversewords(input)
     print(rw)
-    
-#tuple
+'''
+3.25 tuple set dict 数据类型转换
+'''    
+#tuple 元素不可改变
+tuple = ('abcd', 678, 2.23, 'tracer', 70.2)
+tinytuple = (123, 'haha')
+print(tuple)
+print(tuple[0])
+print(tuple[1:3])
+print(tuple[2:])
+print(tuple*2)
+print(tuple + tinytuple)
+#set
+sites = {'google', 'taobao', 'runoob', 'facebook', 'zhihu', 'baidu'}
+print(sites)
+
+if 'runoob' in sites :
+    print('runoob在集合里')
+else :
+    print('没有')
+
+a = set('abcdefghijk')
+b = set('abcdezxy')
+print(a - b) #差集
+print(a | b) #并集
+print(a & b) #交集
+print(a ^ b) #ab中不同时存在的元素 交补
+#dictionary
+dict = {}
+dict['one'] = "1 - 小狗"
+dict[2] = "2 - 可以"
+
+tinydict = {'name': 'runoob', 'code':1, 'site': 'www.runoob.com'}
+print(dict['one'])
+print(dict[2])
+print(tinydict.keys())
+print(tinydict.values())
+#数据类型转换
+#隐式类型转换
+num_int = 123
+num_flo = 1.23
+
+num_new = num_int + num_flo
+
+print("datatype of num_int:", type(num_int))
+print("datatype of num_flo", type(num_flo))
+
+print("value of num_new:", num_new)
+print("datatype of num_new:", type(num_new))
+
+#显式转换
+x = int(1)
+y = int(2.8)
+z = int("3")
+print(x, y, z)
+
+x = float(1)
+y = float(2.8)
+z = float("3")
+w = float("4.2")
+print(x, y, z, w)
+
+x = str("s1")
+y = str(2)
+z = str(3.0)
+print(x, y, z)
+
+num_int = 123
+num_str = "456"
+print("num_int 数据类型为：", type(num_int))
+print("before，num_str数据类型为：", type(num_str))
+num_str = int(num_str)
+print("after，num_str数据类型为：", type(num_str))
+
+num_sum = num_int + num_str
+print("合计", num_sum, "数据类型为", type(num_sum))
+
+
