@@ -174,14 +174,14 @@ if __name__ == "__main__":
 3.25 tuple set dict 数据类型转换
 '''    
 #tuple 元素不可改变
-tuple = ('abcd', 678, 2.23, 'tracer', 70.2)
+tuple1 = ('abcd', 678, 2.23, 'tracer', 70.2)
 tinytuple = (123, 'haha')
-print(tuple)
-print(tuple[0])
-print(tuple[1:3])
-print(tuple[2:])
-print(tuple*2)
-print(tuple + tinytuple)
+print(tuple1)
+print(tuple1[0])
+print(tuple1[1:3])
+print(tuple1[2:])
+print(tuple1*2)
+print(tuple1 + tinytuple)
 #set
 sites = {'google', 'taobao', 'runoob', 'facebook', 'zhihu', 'baidu'}
 print(sites)
@@ -246,5 +246,50 @@ print("after，num_str数据类型为：", type(num_str))
 
 num_sum = num_int + num_str
 print("合计", num_sum, "数据类型为", type(num_sum))
+
+'''
+3.28
+'''
+#推导式
+#list推导式
+names = ['woody', 'buzz', 'tracy', 'alien', 'losto', 'belle']
+new_names = [name.upper() for name in names if len(name)>3]
+print(new_names)
+multiples = [i for i in range(30) if i % 3 == 0]
+print(multiples)
+#dict推导式 将列表中的各字符串值为键，各字符串长度为值，组成键值对 [out_exp_res for out_exp in input_list if condition]
+listdemo = ['Google', 'runoob', 'taobao']
+newdict = {key:len(key) for key in listdemo}
+print(newdict)
+#提供三个字数字，以三个数字为键，三个数字的平方值来创建字典 { key_expr: value_expr for value in collection if condition }
+dic = {x:x**2 for x in (1, 2, 3)}
+print(dic, type(dic))
+#set推导式 { expression for item in Sequence if conditional }
+#计算1，2，3的平方数
+setnew = {i**2 for i in (1,2,3)}
+print(setnew)
+#判断不是abc的字母并输出
+a = {x for x in 'acdcbdecxyz' if x not in 'abc'}
+print(a, type(a))
+#tuple推导式 (expression for item in Sequence if conditional )
+a11 = (x for x in range(1,10))
+print(type(a11))#返回生成器对象
+b11 = tuple(a11)
+print(b11)
+#python解释器\注释\运算符
+#pyhton3编程第一步
+#写一个斐波那契数列
+a, b = 0, 1
+while b < 10:
+    print(b)
+    a, b =b, a + b
+while b < 1000:
+    print(b, end=' ')
+    a, b = b, a+b
+#python 条件控制
+
+
+
+
 
 
