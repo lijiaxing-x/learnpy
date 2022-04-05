@@ -286,7 +286,7 @@ while b < 10:
 while b < 1000:
     print(b, end=' ')
     a, b = b, a+b
-#python 条件控制
+
 
 
 
