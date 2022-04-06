@@ -5,7 +5,6 @@
 #定义hello
 
 
-from tokenize import maybe
 
 
 def hello():
