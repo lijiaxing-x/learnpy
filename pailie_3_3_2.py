@@ -1,4 +1,5 @@
 from itertools import combinations,permutations
+from unittest import case
 
 roads = {'x', 'y'}
 cars = {'1', '2'}
@@ -46,13 +47,14 @@ for possibility in list(permutations(cadidate, len(roads))):
 for each in results:
     print(each)
 
-print(len(results))
+print("方案种类：", len(results))
 
 for result in results:
     for element in result:
         element.lstrip()
-        
 
+print('---------------------------') 
+print('筛选方案：', results[1],'\n',results[2],'\n',results[-3],'\n',results[-2])
 
 '''
 for i in range(results.count(' ')):
